@@ -1,0 +1,199 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
+    buildToolsVersion PROP_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        applicationId "com.yishua.hbxxl"
+        minSdkVersion PROP_MIN_SDK_VERSION
+        targetSdkVersion PROP_TARGET_SDK_VERSION
+        versionCode 11
+        versionName "1.1"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。   // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+            abiFilters 'armeabi-v7a', 'arm64-v8a'//, 'x86', 'x86_64'
+        }
+
+        externalNativeBuild {
+            ndkBuild {
+                if (!project.hasProperty("PROP_NDK_MODE") || PROP_NDK_MODE.compareTo('none') != 0) {
+                    // skip the NDK Build step if PROP_NDK_MODE is none
+                    targets 'cocos2djs'
+                    arguments 'NDK_TOOLCHAIN_VERSION=clang'
+
+                    def module_paths = [project.file("/Applications/CocosCreator/Creator/2.4.5/CocosCreator.app/Contents/Resources/cocos2d-x"),
+                                        project.file("/Applications/CocosCreator/Creator/2.4.5/CocosCreator.app/Contents/Resources/cocos2d-x/cocos"),
+                                        project.file("/Applications/CocosCreator/Creator/2.4.5/CocosCreator.app/Contents/Resources/cocos2d-x/external")]
+                    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+                        arguments 'NDK_MODULE_PATH=' + module_paths.join(";")
+                    } else {
+                        arguments 'NDK_MODULE_PATH=' + module_paths.join(':')
+                    }
+
+                    arguments '-j' + Runtime.runtime.availableProcessors()
+                    abiFilters.addAll(PROP_APP_ABI.split(':').collect { it as String })
+                }
+            }
+        }
+    }
+
+    sourceSets.main {
+        java.srcDirs "../src", "src"
+        res.srcDirs "../res", 'res'
+        jniLibs.srcDirs "../libs", 'libs'
+        manifest.srcFile "AndroidManifest.xml"
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            if (!project.hasProperty("PROP_NDK_MODE") || PROP_NDK_MODE.compareTo('none') != 0) {
+                // skip the NDK Build step if PROP_NDK_MODE is none
+                path "jni/Android.mk"
+            }
+        }
+    }
+
+    signingConfigs {
+
+        release {
+            if (project.hasProperty("RELEASE_STORE_FILE")) {
+                storeFile file(RELEASE_STORE_FILE)
+                storePassword RELEASE_STORE_PASSWORD
+                keyAlias RELEASE_KEY_ALIAS
+                keyPassword RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (project.hasProperty("RELEASE_STORE_FILE")) {
+                signingConfig signingConfigs.release
+            }
+
+            externalNativeBuild {
+                ndkBuild {
+                    arguments 'NDK_DEBUG=0'
+                }
+            }
+        }
+
+        debug {
+            debuggable true
+            jniDebuggable true
+            renderscriptDebuggable true
+
+            if (project.hasProperty("RELEASE_STORE_FILE")) {
+                signingConfig signingConfigs.release
+            }
+
+            externalNativeBuild {
+                ndkBuild {
+                    arguments 'NDK_DEBUG=1'
+                }
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // 打包报错：Entry name 'META-INF/androidx.legacy_legacy-support-core-utils.version' collided
+    // https://stackoverflow.com/questions/62384084/while-generating-signed-apk-androidx-legacy-legacy-support-core-utils-version
+    packagingOptions {
+        exclude 'META-INF/androidx.legacy_legacy-support-core-utils.version'
+        exclude 'META-INF/androidx.vectordrawable_vectordrawable.version'
+        // or exclude 'META-INF/*'
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+
+        xxl {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xxl"]
+        }
+//        invite {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "invite"]
+//        }
+//        vivo {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "vivo"]
+//        }
+//        oppo {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "oppo"]
+//        }
+//        yingyongbao {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yingyongbao"]
+//        }
+//        xiaomi {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+//        }
+//        huawei {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei"]
+//        }
+    }
+}
+
+android.applicationVariants.all { variant ->
+    // delete previous files first
+    delete "${buildDir}/intermediates/merged_assets/${variant.dirName}"
+
+    variant.mergeAssets.doLast {
+        def sourceDir = "${buildDir}/../../../../.."
+
+        copy {
+            from "${sourceDir}"
+            include "assets/**"
+            include "src/**"
+            include "jsb-adapter/**"
+            into outputDir
+        }
+
+        copy {
+            from "${sourceDir}/main.js"
+            from "${sourceDir}/project.json"
+            into outputDir
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: '../libs', include: ['*.jar', '*.aar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation fileTree(dir: "/Applications/CocosCreator/Creator/2.4.5/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
+    implementation project(':libcocos2dx')
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    implementation 'com.alibaba:fastjson:1.2.73'
+
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.0'
+
+    // oaid
+//    implementation(name: 'miit_mdid_1.0.10', ext: 'aar')
+//
+//    implementation(name: 'GDTSDK.unionNormal.4.333.1203', ext: 'aar')
+//    implementation(name: 'open_ad_sdk3503', ext: 'aar')
+    implementation 'com.umeng.umsdk:common:9.3.8'// 必选
+    implementation 'com.umeng.umsdk:asms:1.2.2'// 必选
+
+    implementation 'org.greenrobot:eventbus:3.2.0'
+
+//    implementation(name: 'AMapLocation_5.3.1_20210402', ext: 'aar')
+
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+}

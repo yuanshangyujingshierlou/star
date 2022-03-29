@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "1b88f1cf-33a4-4bb8-b1dd-0f969546c05c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 256,
+  "platformSettings": {},
+  "subMetas": {
+    "领红包冷却时间、小金猪红包冷却时间（字号36）-export": {
+      "ver": "1.0.4",
+      "uuid": "d6c3cc5c-e466-46a4-b6e9-d4449382e29c",
+      "rawTextureUuid": "1b88f1cf-33a4-4bb8-b1dd-0f969546c05c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -7.5,
+      "offsetY": 5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 49,
+      "height": 246,
+      "rawWidth": 64,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

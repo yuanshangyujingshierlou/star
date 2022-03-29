@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE resources [<!ENTITY appname "红包消消乐"><!ENTITY author "Junguo.Liu">]>
+
+<resources>
+    <string name="app_name" translatable="false">&appname;</string>
+
+    <string name="text_tip">您点击\"同意\"，即表示您已阅读并同意更新后的《服务协议》及《隐私政策》</string>
+
+    <string name="permission_phone_content">我们需要您同意开启\"电话权限\"，获取您的设备信息，申请该权限是保障您的账户正常安全运行的基础权限，拒绝后可能会影响您账户的安全登录和权益获取</string>
+    <string name="permission_storage_content">我们需要您同意开启\"存储权限\"，申请该权限是为了缓存图片和视频，降低流量消耗</string>
+    <string name="permission_location_content">我们需要您同意开启\"位置权限\"，申请该权限是为了给您推荐和您所处区域相关的内容</string>
+    <string name="permission_pkg_content">为了预防恶意程序，确保运营质量及效率我们会收集安装的应用信息。您可在系统设置权限管理中取消授权</string>
+
+    <string name="new_user_gift_tip">已存入\"我的钱包\"可提现</string>
+    <string name="new_user_tip">&appname;给你发了一个红包</string>
+    <string name="policy_title">我们依据最新的法律，向您说明&appname;软件的隐私政策，特向您推送本提示。请您阅读并充分理解相关条款。</string>
+    <string name="permission_title">&appname;将向您申请获取相关权限，在此我们对一些重要权限作出解释说明，请您仔细阅读并充分理解</string>
+    <string name="company_name">北京英良网络技术有限公司</string>
+
+</resources>

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "718241da-cbf5-46a1-a140-df739edbe86d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 94,
+  "height": 27,
+  "platformSettings": {},
+  "subMetas": {
+    "70级提现": {
+      "ver": "1.0.4",
+      "uuid": "f01130db-1985-4d32-bbca-f2a5254a68d9",
+      "rawTextureUuid": "718241da-cbf5-46a1-a140-df739edbe86d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": 0.5,
+      "trimX": 3,
+      "trimY": 2,
+      "width": 89,
+      "height": 22,
+      "rawWidth": 94,
+      "rawHeight": 27,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

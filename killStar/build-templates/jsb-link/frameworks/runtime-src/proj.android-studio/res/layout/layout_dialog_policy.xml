@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_corner_radius_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#fff"
+            android:text="用户协议及隐私协议"
+            android:textColor="#000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/sv_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/divide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/policy_title"
+                    android:textColor="#3A3A3A"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_title_promise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="我们承诺："
+                    android:textColor="#000"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tv_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+                <ImageView
+                    android:id="@+id/iv_dialog_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:src="@mipmap/icon_dialog_policy"
+                    app:layout_constraintStart_toStartOf="@id/tv_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_promise" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="我们会严格按照《网络安全法》、《信息网络传播保护条例》等保护您的个人信息；"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_dialog_policy"
+                    app:layout_constraintEnd_toEndOf="@id/tv_content"
+                    app:layout_constraintStart_toEndOf="@id/iv_dialog_policy"
+                    app:layout_constraintTop_toTopOf="@id/iv_dialog_policy" />
+
+                <ImageView
+                    android:id="@+id/iv_dialog_secrecy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:src="@mipmap/icon_dialog_secrecy"
+                    app:layout_constraintStart_toStartOf="@id/tv_content"
+                    app:layout_constraintTop_toBottomOf="@id/iv_dialog_policy" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="如果未经您的授权，我们不会使用您的个人信息用于您未授权的其他途径或目的。"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_dialog_secrecy"
+                    app:layout_constraintEnd_toEndOf="@id/tv_content"
+                    app:layout_constraintStart_toEndOf="@id/iv_dialog_secrecy"
+                    app:layout_constraintTop_toTopOf="@id/iv_dialog_secrecy" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_permission_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/tv_content"
+                    app:layout_constraintStart_toStartOf="@id/tv_content"
+                    app:layout_constraintTop_toBottomOf="@id/iv_dialog_secrecy">
+
+                    <TextView
+                        android:id="@+id/tv_content_permission"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:lineSpacingExtra="5dp"
+                        android:text="@string/permission_title"
+                        android:textColor="#3A3A3A"
+                        android:textSize="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_phone_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:text="设备信息"
+                        android:textColor="#3A3A3A"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_phone"
+                        app:layout_constraintTop_toBottomOf="@id/tv_content_permission" />
+
+                    <ImageView
+                        android:id="@+id/iv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:src="@mipmap/icon_permission_phon"
+                        app:layout_constraintStart_toStartOf="@id/tv_content_permission"
+                        app:layout_constraintTop_toBottomOf="@id/tv_phone_title" />
+
+                    <TextView
+                        android:id="@+id/tv_phone_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/permission_phone_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tv_phone_title"
+                        app:layout_constraintTop_toTopOf="@id/iv_phone" />
+
+                    <TextView
+                        android:id="@+id/tv_storage_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:text="存储权限"
+                        android:textColor="#3A3A3A"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_phone"
+                        app:layout_constraintTop_toBottomOf="@id/tv_phone_content" />
+
+                    <ImageView
+                        android:id="@+id/iv_storage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:src="@mipmap/icon_permission_storage"
+                        app:layout_constraintStart_toStartOf="@id/tv_content_permission"
+                        app:layout_constraintTop_toBottomOf="@id/tv_storage_title" />
+
+                    <TextView
+                        android:id="@+id/tv_storage_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/permission_storage_content"
+                        app:layout_constraintEnd_toEndOf="@id/tv_phone_content"
+                        app:layout_constraintStart_toStartOf="@id/tv_storage_title"
+                        app:layout_constraintTop_toTopOf="@id/iv_storage" />
+
+                    <TextView
+                        android:id="@+id/tv_location_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:text="位置权限"
+                        android:textColor="#3A3A3A"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_location"
+                        app:layout_constraintTop_toBottomOf="@id/tv_storage_content" />
+
+                    <ImageView
+                        android:id="@+id/iv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:src="@mipmap/icon_permission_location"
+                        app:layout_constraintStart_toStartOf="@id/tv_content_permission"
+                        app:layout_constraintTop_toBottomOf="@id/tv_location_title" />
+
+                    <TextView
+                        android:id="@+id/tv_location_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/permission_location_content"
+                        app:layout_constraintEnd_toEndOf="@id/tv_phone_content"
+                        app:layout_constraintStart_toStartOf="@id/tv_location_title"
+                        app:layout_constraintTop_toTopOf="@id/iv_location" />
+
+                    <TextView
+                        android:id="@+id/tv_pkg_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:text="应用信息"
+                        android:textColor="#3A3A3A"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_pkg"
+                        app:layout_constraintTop_toBottomOf="@id/tv_location_content" />
+
+                    <ImageView
+                        android:id="@+id/iv_pkg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:src="@mipmap/icon_permission_pkg_list"
+                        app:layout_constraintStart_toStartOf="@id/tv_content_permission"
+                        app:layout_constraintTop_toBottomOf="@id/tv_pkg_title" />
+
+                    <TextView
+                        android:id="@+id/tv_pkg_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/permission_pkg_content"
+                        app:layout_constraintEnd_toEndOf="@id/tv_location_content"
+                        app:layout_constraintStart_toStartOf="@id/tv_pkg_title"
+                        app:layout_constraintTop_toTopOf="@id/iv_pkg" />
+                </android.support.constraint.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_tip0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/text_tip"
+                    app:layout_constraintEnd_toEndOf="@id/tv_content"
+                    app:layout_constraintStart_toStartOf="@id/tv_content"
+                    app:layout_constraintTop_toBottomOf="@id/cl_permission_container" />
+
+                <TextView
+                    android:id="@+id/tv_tip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:paddingBottom="10dp"
+                    android:text="查看完整版"
+                    app:layout_constraintEnd_toStartOf="@id/tv_policy"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@id/tv_tip0"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tip0" />
+
+                <TextView
+                    android:id="@+id/tv_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="《服务协议》"
+                    android:textColor="#0D93FF"
+                    app:layout_constraintEnd_toStartOf="@id/tv_tip2"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/tv_tip1"
+                    app:layout_constraintTop_toTopOf="@id/tv_tip1" />
+
+                <TextView
+                    android:id="@+id/tv_tip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="及"
+                    app:layout_constraintEnd_toStartOf="@id/tv_privacy_policy"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/tv_policy"
+                    app:layout_constraintTop_toTopOf="@id/tv_tip1" />
+
+                <TextView
+                    android:id="@+id/tv_privacy_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="《隐私政策》"
+                    android:textColor="#0D93FF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/tv_tip2"
+                    app:layout_constraintTop_toTopOf="@id/tv_tip1" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
+
+        <View
+            android:id="@+id/divide"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="15dp"
+            android:background="#E3E3E3"
+            app:layout_constraintBottom_toTopOf="@id/tv_disagree" />
+
+        <TextView
+            android:id="@+id/tv_disagree"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_btn_gray"
+            android:gravity="center"
+            android:text="不同意"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cl_agree"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_agree"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:layout_marginLeft="10dp"-->
+        <!--            android:layout_marginRight="10dp"-->
+        <!--            android:background="@drawable/bg_btn_blue"-->
+        <!--            android:gravity="center"-->
+        <!--            android:text="同意"-->
+        <!--            android:textColor="#fff"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/tv_disagree"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/tv_disagree" />-->
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_agree"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_btn_blue"
+            app:layout_constraintBottom_toBottomOf="@id/tv_disagree"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_disagree">
+
+            <View
+                android:id="@+id/ring"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:background="@drawable/bg_policy_ring"
+                app:layout_constraintBottom_toTopOf="@id/tv_agree_2"
+                app:layout_constraintEnd_toStartOf="@id/tv_agree_1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_agree_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:text="已阅读并同意"
+                android:textColor="#fff"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/ring"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ring"
+                app:layout_constraintTop_toTopOf="@id/ring" />
+
+            <TextView
+                android:id="@+id/tv_agree_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="《服务协议》及《隐私政策》"
+                android:textColor="#fff"
+                android:textSize="9dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ring" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

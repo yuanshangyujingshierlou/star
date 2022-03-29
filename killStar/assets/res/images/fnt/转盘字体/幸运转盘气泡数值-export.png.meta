@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "3f75f9e2-d3f5-4602-81d8-929b224f4720",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 128,
+  "height": 256,
+  "platformSettings": {},
+  "subMetas": {
+    "幸运转盘气泡数值-export": {
+      "ver": "1.0.4",
+      "uuid": "3a2bc449-7457-46fc-9c8c-6341c55d8f06",
+      "rawTextureUuid": "3f75f9e2-d3f5-4602-81d8-929b224f4720",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -17.5,
+      "offsetY": 23.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 93,
+      "height": 209,
+      "rawWidth": 128,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

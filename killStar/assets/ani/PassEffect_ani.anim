@@ -1,0 +1,116 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "effect_text03",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.5,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "trail02": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -1555.928,
+                -0.482,
+                0
+              ]
+            },
+            {
+              "frame": 1.5,
+              "value": [
+                1534.786,
+                -0.482,
+                0
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 1.4166666666666667,
+              "value": 255
+            },
+            {
+              "frame": 1.5,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "yxjm_wmggwz_ui": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -535.865,
+                0,
+                0
+              ]
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": [
+                3.628,
+                0,
+                0
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 1.4166666666666667,
+              "value": 255
+            },
+            {
+              "frame": 1.5,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "hengzhe": {
+        "props": {
+          "scale": []
+        }
+      },
+      "wenli03": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              }
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 4.236,
+                "y": 3.641
+              }
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.25,
+              "value": 255
+            },
+            {
+              "frame": 1,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

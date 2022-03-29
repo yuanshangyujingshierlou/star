@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "a291e923-17cd-40e3-b382-78a02efbc146",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 648,
+  "height": 331,
+  "platformSettings": {},
+  "subMetas": {
+    "转盘标题@2x": {
+      "ver": "1.0.4",
+      "uuid": "8c5fd762-ca7a-4b04-bd27-6943be4f208a",
+      "rawTextureUuid": "a291e923-17cd-40e3-b382-78a02efbc146",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": -2.5,
+      "trimX": 6,
+      "trimY": 7,
+      "width": 635,
+      "height": 322,
+      "rawWidth": 648,
+      "rawHeight": 331,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

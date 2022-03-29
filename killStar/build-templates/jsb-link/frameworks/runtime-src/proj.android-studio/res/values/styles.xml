@@ -1,0 +1,89 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">#008577</item>
+        <item name="colorPrimaryDark">#6AC2E8</item>
+        <item name="colorAccent">#D81B60</item>
+        <item name="android:splitMotionEvents">false</item>
+        <!--<item name="android:windowAnimationStyle">@style/activityAnim</item>-->
+    </style>
+    <!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+    <!--    <style name="AppTheme" parent="AppTheme">-->
+    <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--        <item name="colorAccent">@color/colorAccent</item>-->
+    <!--    </style>-->
+    <!-- 防止启动页白屏或者黑屏，设置图片 -->
+    <!--    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <!--        <item name="android:windowBackground">@drawable/bg_splash</item>-->
+    <!--        <item name="android:windowFullscreen">true</item>-->
+    <!--        <item name="windowNoTitle">true</item>-->
+    <!--    </style>-->
+    <!--这里为继承 CCC 默认说采用的主题 Theme.NoTitleBar.Fullscreen -->
+    <style name="SplashStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--自定义主题背景为我们刚刚创建的颜色-->
+<!--        <item name="android:windowBackground">@color/color_theme</item>-->
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <!--令主题无标题-->
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppStyle" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+<!--        设置这个没用，没法解决游戏页面第一次打开有一个黑屏的问题-->
+<!--        <item name="android:windowBackground">@drawable/bg_splash</item>-->
+    </style>
+
+    <declare-styleable name="NiceImageView">
+        <attr name="is_circle" format="boolean" />
+        <attr name="is_cover_src" format="boolean" />
+        <attr name="corner_radius" format="dimension" />
+        <attr name="corner_top_left_radius" format="dimension" />
+        <attr name="corner_top_right_radius" format="dimension" />
+        <attr name="corner_bottom_left_radius" format="dimension" />
+        <attr name="corner_bottom_right_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="inner_border_width" format="dimension" />
+        <attr name="inner_border_color" format="color" />
+        <attr name="mask_color" format="color" />
+    </declare-styleable>
+
+    <style name="AlertDialog_Common" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">#F1F1F1</item>
+        <item name="colorPrimaryDark">#DA8020</item>
+        <item name="colorAccent">#DA8020</item>
+    </style>
+
+    <style name="dialog_video_jump" parent="Theme.AppCompat.Dialog" />
+
+    <style name="dialog_tip" >
+        <!--设置dialog的背景-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--设置Dialog的windowFrame框为无-->
+        <item name="android:windowFrame">@null</item>
+        <!--设置无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置窗口内容不覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--设置动画，在这里使用让它继承系统的Animation.Dialog-->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!--背景是否模糊显示-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="dialog_transparent" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+</resources>

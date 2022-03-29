@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "73d2f58a-7e6e-4cb4-bc76-0aadd3684da7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 112,
+  "height": 125,
+  "platformSettings": {},
+  "subMetas": {
+    "幸运转盘": {
+      "ver": "1.0.4",
+      "uuid": "320c39f6-4463-46b4-b7cf-19aeb6e196b4",
+      "rawTextureUuid": "73d2f58a-7e6e-4cb4-bc76-0aadd3684da7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 112,
+      "height": 125,
+      "rawWidth": 112,
+      "rawHeight": 125,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "ae7f1d87-071c-4f77-842b-0e559d366d81",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 576,
+  "height": 988,
+  "platformSettings": {},
+  "subMetas": {
+    "观看视频广告可快速增长      所有档位的奖励进度哦~": {
+      "ver": "1.0.4",
+      "uuid": "5f5e2496-0ddb-45bf-b778-e5a23782d554",
+      "rawTextureUuid": "ae7f1d87-071c-4f77-842b-0e559d366d81",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 576,
+      "height": 988,
+      "rawWidth": 576,
+      "rawHeight": 988,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
